@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<!--@author Eleni Maria-->
+<html>
+        <head>
+        <title>CCC Control Panel</title>
+        <script src="js/logAccount.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/login.css">
+
+    <body>
+        <h1>Welcome to our Credit Card Company!</h1>
+        <br><br>
+            <div class="column" id="column">
+                <table id="table">
+                    <tr>
+                        <td class="outside">Manage Account</td>
+                        <td><button id="b1" onclick="Show_LoginPage()">Login Account</button></td>
+                        <td><button id="b2" onclick="Show_RegPage()">Create Account</button></td>
+                        <td><button id="b3" onclick="Show_CloseAccPage()">Close Account</button></td>
+                    </tr>
+                    <tr>
+                        <td class="outside">Transactions</td>
+                        <td><button id="b4" onclick="Show_PurchasePage()">Purchase</button></td>
+                        <td><button id="b5" onclick="Show_ReturnPage()">Return</button></td>
+                        <td><button id="b6" onclick="Show_PayOffPage()">Pay Off</button></td>
+                    </tr>
+                    <tr>
+                        <td class="outside">More Information</td>
+                        <td><button id="b7" onclick="Show_QuestionsPage()">Questions</button></td>
+                        <td><button id="b8" onclick="Show_GoodUserPage()">State of Good Users</button></td>
+                        <td><button id="b9" onclick="Show_BadUserPage()">State of Bad Users</button></td>
+                        <td><button id="b10" onclick="Show_SellerOfTheMonthPage()">Seller of the Month</button></td>
+                    </tr>
+                </table> 
+            </div>
+        <button class="homebutton" id="previous" style="display: none;" onclick="Show_HomePage()">&laquo; Home</button>
+        <div class="login_page" id="login_page" style="display: none;">
+            <h2>Login</h2>
+            <label for="acc_id">Account ID</label> <br> 
+            <input type="text" id="acc_id" name="acc_id" placeholder="Enter your account ID." title ="Enter your account ID." required ><br> <br> 
+            <label for="pw">Password:</label> <br> 
+            <input type="password" id="pw" name="pw" pattern="(?=.*\d)(?=.*\W+)(?=.*[a-zA-Z]).{8,15}" placeholder="Enter a password." title="Password." required> <br> <br> 
+        </div>
+        <div id="signup_response"></div>
+        <div class="reg_page" id="create" style="display: none;">
+            <h2>Registration Form</h2>
+
+        <form action="/action_page.php" method="post">
+            <div class="image">
+                <img src="./image/avatar.jpg" alt="Avatar" class="avatar">
+            </div>
+            <label for="account_id">Account ID</label> <br> 
+            <input type="text" id="account_id" name="account_id" placeholder="Enter your account ID." title="Please, enter your account ID" required> <br> <br>
+            <label for="password">Password:</label><br> 
+            <input type="password" id="password" name="password" placeholder="Enter a password." title="Please, enter password." required> <br> <br> 
+            <label for="name">Name:</label> <br> 
+            <input type="text" id="name" name="name" placeholder="Enter your first name or company's name." title="Please, enter your fisrt name or company's name." required> <br> <br> 
+            
+            <div class="options">
+                <button class="individual" id="individual" name="individual" onclick="IndividualOption()">Individual</button>
+                <button class="company" id="company" name="company" onclick="CompanyOption()">Company</button>
+                <button class="seller" id="seller" name="seller" onclick="SellerOption()">Seller</button>
+            </div>
+            
+            <div class="individual_user" id="individual_user" style="display: none;">
+            <label class="individual_u">
+                <label for="surname">Lastname:</label><br> 
+                <input type="text" id="surname" name="surname" placeholder="Enter your lastname." title="Please, enter your lastname" required> <br> <br> 
+                <label for="expire_date">Expiration Date:</label> <br> 
+                <input type="date" id="expire_date" name="expire_date" min="2022-01-01" max="2040-12-01" placeholder="Enter expiration date." title="Please, enter expiration date." required> <br> <br>
+                <label for="account_lim">Account Limit</label> <br>
+                <input type="text" id="account_lim" name="account_lim" placeholder="Enter account limit." title="Please, enter account limit." required> <br> <br> 
+                <label for="current_debt">Current Debt</label> <br>
+                <input type="text" id="current_debt" name="current_debt"  placeholder="Enter current debt." title="Please, enter current debt." required> <br> <br> 
+                <label for="available_balance">Available Balance</label> <br>
+                <input type="text" id="available_balance" name="available_balance"  placeholder="Enter available balance." title="Please, enter available balance." required> <br> <br> 
+            </label><br>
+                <button class="submit_individual" id="submit_individual" name="submit_individual" onclick="submit_individual()">Submit</button>
+            </div>
+            <div class="company_user" id="company_user" style="display: none;">
+            <label class="company_u">
+                <label for="exp_date">Expiration Date:</label> <br> 
+                <input type="date" id="exp_date" name="exp_date" min="2022-01-01" max="2040-12-01" placeholder="Enter expiration date." title="Please, enter expiration date." required> <br> <br>
+                <label for="account_limit">Account Limit</label> <br>
+                <input type="text" id="account_limit" name="account_limit" placeholder="Enter account limit." title="Please, enter account limit." required> <br> <br> 
+                <label for="current_d">Current Debt</label> <br>
+                <input type="text" id="current_d" name="current_d" placeholder="Enter current debt." title="Please, enter current debt." required> <br> <br> 
+                <label for="available_b">Available Balance</label> <br>
+                <input type="text" id="available_b" name="available_b" placeholder="Enter available balance." title="Please, enter available balance." required> <br> <br>
+                <button class="employee" id="employee" name="employee" onclick="EmployeeOption()">I'm company's employee</button>
+            </label><br>
+            </div>
+            <div class="employee_user" id="employee_user" style="display: none;">
+                <label for="employee_name">Name:</label> <br> 
+                <input type="text" id="employee_name" name="employee_name" placeholder="Enter your first name." title="Please, enter your fisrt name" required> <br> <br> 
+                <label for="employee_surname">Lastname:</label> <br> 
+                <input type="text" id="employee_surname" name="employee_surname" placeholder="Enter your lastname." title="Please, enter your lastname" required> <br> <br> 
+                <label for="employee_id">Employee ID</label> <br> 
+                <input type="text" id="employee_id" name="employee_id" placeholder="Enter your employee ID." title="Please, enter your employee ID" required> <br>
+                <button class="submit_company" id="submit_company" name="submit_company" onclick="submit_company()">Submit</button>
+            </div>
+            <div class="seller_user" id="seller_user" style="display: none;">
+            <label class="seller_u">
+                <label for="surname">Lastname:</label><br> 
+                <input type="text" id="surname" name="surname" placeholder="Enter your lastname." title="Please, enter your lastname" required> <br> <br> 
+                <label for="selle_fee">Seller Fee:</label> <br> 
+                <input type="text" id="selle_fee" name="seller_fee" placeholder="Enter seller fee." title="Enter seller fee." required> <br> <br>
+                <label for="profit">Profit</label> <br>
+                <input type="text" id="profit" name="profit" placeholder="Enter profit." title="Please, enter profit." required> <br> <br> 
+                <label for="curr_debt">Current Debt</label> <br>
+                <input type="text" id="curr_debt" name="curr_debt" placeholder="Enter current debt." title="Please, enter current debt." required> <br> <br> 
+            </label><br>
+                <button class="submit_seller" id="submit_seller" name="submit_seller" onclick="submit_seller()">Submit</button>
+            </div>
+            </form>
+        </div>
+        <div class="close_acc" id="close_acc" style="display: none;">
+            <h2>Close Account</h2>
+            <input type="text" id="close_account_id" name="close_account_id" placeholder="Enter account ID." title="Enter account ID." required> <br> <br>
+            <button class="submit_close" id="submit_close" name="submit_close" onclick="delete_acc()">Submit</button>
+        </div>
+        <div class="purchase_option" id="purchase_option" style="display: none;">
+            <h2>Purchase Transaction</h2>
+            <label class="purchase_page">
+                <label for="transaction_id">Transaction ID</label> <br>
+                <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter transaction ID." title="Enter transaction ID." required> <br> <br>
+                <label for="customer_id">Customer ID</label> <br>
+                <input type="text" id="customer_id" name="customer_id" placeholder="Enter customer ID." title="Enter customer ID." required> <br> <br>
+                <label for="seller_id">Seller ID</label> <br>
+                <input type="text" id="seller_id" name="seller_id" placeholder="Enter seller ID." title="Enter seller ID." required> <br> <br>
+                <label for="amount">Transaction amount</label> <br>
+                <input type="text" id="amount" name="amount" placeholder="Enter transaction amount." title="Enter transaction amount." required> <br> <br>
+                <label for="trans_day">Day of Transaction</label> <br>
+                <input type="text" id="trans_day" name="trans_day" placeholder="Enter day of transaction." title="Enter day of transaction." required> <br> <br>
+                <label for="trans_month">Month of Transaction</label> <br>
+                <input type="text" id="trans_month" name="trans_month" placeholder="Enter month of transaction." title="Enter month of transaction." required> <br> <br>
+                <label for="trans_year">Year of Transaction</label> <br>
+                <input type="text" id="trans_year" name="trans_year" placeholder="Enter year of transaction." title="Enter year of transaction." required> <br> <br>
+                <label for="trans_type">Transaction Type</label> <br>
+                <input type="text" id="trans_type" name="trans_type" placeholder="Enter type of transaction." title="Enter type of transaction." required> <br> <br>
+                <label for="customer_check">Customer Type</label> <br>
+                <input type="text" id="customer_check" name="customer_check" placeholder="Individual or Company?" title="Individual or Company?" required> <br> <br>
+            </label>
+            <button class="submit_purchase" id="submit_purchase" name="submit_purchase">Submit</button>
+        </div>
+        <div class="return_option" id="return_option" style="display: none;">
+            <h2>Return Transaction</h2>
+            <label class="return_page">
+                <label for="trans_id">Transaction ID</label> <br>
+                <input type="text" id="trans_id" name="trans_id" placeholder="Enter transaction ID." title="Enter transaction ID." required> <br> <br>
+                <label for="cust_id">Costumer ID</label> <br>
+                <input type="text" id="cust_id" name="cust_id" placeholder="Enter customer ID." title="Enter customer ID." required> <br> <br>
+                <label for="sell_id">Seller ID</label> <br>
+                <input type="text" id="sell_id" name="sell_id" placeholder="Enter seller ID." title="Enter seller ID." required> <br> <br>
+                <label for="amount_trans">Transaction amount</label> <br>
+                <input type="text" id="amount_trans" name="amount_trans" placeholder="Enter transaction amount." title="Enter transaction amount." required> <br> <br>
+                <label for="transaction_day">Day of Transaction</label> <br>
+                <input type="text" id="transaction_day" name="transaction_day" placeholder="Enter day of transaction." title="Enter day of transaction." required> <br> <br>
+                <label for="transaction_month">Month of Transaction</label> <br>
+                <input type="text" id="transaction_month" name="transaction_month" placeholder="Enter month of transaction." title="Enter month of transaction." required> <br> <br>
+                <label for="transaction_year">Year of Transaction</label> <br>
+                <input type="text" id="transaction_year" name="transaction_year" placeholder="Enter year of transaction." title="Enter year of transaction." required> <br> <br>
+                <label for="transaction_type">Transaction Type</label> <br>
+                <input type="text" id="transaction_type" name="transaction_type" placeholder="Enter type of transaction." title="Enter type of transaction." required> <br> <br>
+                <label for="cust_check">Customer Type</label> <br>
+                <input type="text" id="cust_check" name="cust_check" placeholder="Individual or Company?" title="Individual or Company?" required> <br> <br>
+            </label>
+            <button class="submit_return" id="submit_return" name="submit_return">Submit</button>
+        </div>
+        <div class="payoff_option" id="payoff_option" style="display: none;">
+            <h2>Pay-Off Transaction</h2>
+            <label class="payoff_page">
+                <label for="id_transaction">Transaction ID</label> <br>
+                <input type="text" id="id_transaction" name="id_transaction" placeholder="Enter transaction ID." title="Enter transaction ID." required> <br> <br>
+                <label for="id_customer">Costumer ID</label> <br>
+                <input type="text" id="id_customer" name="id_customer" placeholder="Enter customer ID." title="Enter customer ID." required> <br> <br>
+                <label for="pay_amount">Transaction amount</label> <br>
+                <input type="text" id="pay_amount" name="pay_amount" placeholder="Enter transaction amount." title="Enter transaction amount." required> <br> <br>
+                <label for="day_trans">Day of Transaction</label> <br>
+                <input type="text" id="day_trans" name="day_trans" placeholder="Enter day of transaction." title="Enter day of transaction." required> <br> <br>
+                <label for="month_trans">Month of Transaction</label> <br>
+                <input type="text" id="month_trans" name="month_trans" placeholder="Enter month of transaction." title="Enter month of transaction." required> <br> <br>
+                <label for="year_trans">Year of Transaction</label> <br>
+                <input type="text" id="year_trans" name="year_trans" placeholder="Enter year of transaction." title="Enter year of transaction." required> <br> <br>
+                <label for="type_trans">Transaction Type</label> <br>
+                <input type="text" id="type_trans" name="type_trans" placeholder="Enter type of transaction." title="Enter type of transaction." required> <br> <br>
+                <label for="user_check">User Type</label> <br>
+                <input type="text" id="user_check" name="user_check" placeholder="Individual, Company or Seller?" title="Individual, Company or Seller?" required> <br> <br>
+            </label>
+            <button class="submit_payoff" id="submit_payoff" name="submit_payoff">Submit</button>
+        </div>
+        <div class="questions_option" id="questions_option" style="display: none;">
+            <h2>Questions</h2>
+                <h3>Here you can find answers to any questions you may have on transactions you have made.</h3>
+                <label for="question_id">User ID</label> <br>
+                <input type="text" id="question_id" name="question_id" placeholder="Enter account ID." title="Enter account ID." required> <br> <br>
+                <button class="submit_question" id="submit_question" name="submit_question">Submit</button>
+        </div>
+        <div class="gooduser_option" id="gooduser_option" style="display: none;">
+            <h2>Good Users</h2>
+                <h3>Here you can find all the good users of CCC, who are all the users that don't have any debt towards the company.</h3>
+        </div>
+        <div class="baduser_option" id="baduser_option" style="display: none;">
+            <h2>Bad Users</h2>
+                <h3>Here you can find all the bad users of CCC, who are all the users that have a debt towards the company.</h3>
+        </div>
+        <div class="monthseller_option" id="monthseller_option" style="display: none;">
+            <h2>Seller of the Month</h2>
+                <h3>Here you can find who the seller of the month was.<br>The seller of the month is the one that made the most purchases the previous month.</h3>
+        </div>
+    </body>
+</html>

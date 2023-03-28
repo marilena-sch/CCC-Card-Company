@@ -1,0 +1,301 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author: Eleni Maria
+*/
+
+
+*
+body {
+  background-color:seashell;
+}
+
+h1 {
+  text-align: center;
+}
+
+.column {
+    width: 1400px;
+    padding: 10px;
+    border: 1px solid palegoldenrod;
+    border-radius: 0px;
+    margin-right:auto;
+    margin-bottom:10px;
+    margin-left:auto;
+    height:500px;
+}
+
+.homebutton:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.homebutton {
+    min-height: 10px;
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.outside {
+   font-size: 25px; 
+   font:monospace;
+}
+
+table{
+    width:100%; 
+    height:500px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+button{
+    color: seashell;
+    font-size: 20px;
+    font:monospace;
+    background-color:palegoldenrod;
+    padding: 30px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    width:250px;
+    min-height: 130px;
+}
+
+button:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;  
+}
+
+.login_page{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.reg_page{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.reg_page button{
+    background-color:palegoldenrod;
+    color:black;
+    padding: 15px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 7%;
+}
+
+.individual:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.individual{
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.company:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.company{
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.seller:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.seller{
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.submit_seller:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.submit_seller {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.submit_individual:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.submit_individual {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.submit_company:hover {
+    opacity: 0.6;
+    background-color:blanchedalmond;
+    color: palegoldenrod;
+}
+
+.submit_company {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.close_acc{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.submit_close {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.purchase_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.submit_purchase {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.employee {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.return_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.submit_return {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.payoff_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.submit_payoff {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.questions_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.submit_question {
+    min-height: 5px;
+    width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: palegoldenrod;
+    color: seashell;
+}
+
+.gooduser_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.baduser_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
+
+.monthseller_option{
+    text-align: center; 
+    font-size: 20px; 
+    font:cursive;
+}
